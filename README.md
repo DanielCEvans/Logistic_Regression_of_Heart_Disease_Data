@@ -1,41 +1,45 @@
-## Welcome to GitHub Pages
+## Predicting Heart Disease Using Logistic Regression
 
-You can use the [editor on GitHub](https://github.com/DanielCEvans/Logistic_Regression_of_Heart_Disease_Data/edit/gh-pages/README.md) to maintain and preview the content for your website in Markdown files.
+- “Heart disease is a catch-all term covering a variety of conditions that affect the heart’s structure and function” [1].
+- “Coronary heart disease is the leading cause of death in Australia” [1].
+- “An estimated 1.2 million (5.6%) Australian adults aged 18 years and over had 1 or more conditions related to heart or vascular disease, including stroke, in 2017–18, based on self-reported data from the Australian Bureau of Statistics (ABS) 2017–18 National Health Survey” [2].
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+These staggering statistics are the reason behind modelling this particular data. This report aims to determine if there are any key indicators of heart disease among the attributes in the dataset. This will be done through data visualisations and data modelling.
 
-### Markdown
+As the target feature ‘diagnosis of heart disease’ is binary, a logistic regression model will be fitted to the data. A logistic regression model will enable us to determine the probability of a patient being diagnosed with heart disease given that patients attribute information. Further, the odds of being diagnosed with heart disease with varying levels of certain significant predictor attributes will be analysed.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+## Table of Contents
+1. Executive Summary
+2. Statistical Modelling
+2.1 Model Fitting
+2.2 Residual Analysis
+2.3 Response Analysis
+2.4 Goodness of Fit
+2.5 Confidence Intervals
+2.6 Hypothesis Tests for Regression Parameters
+2.7 Sensitivity Analysis
+3. Critique and Limitations
+4. Summary and Conclusions
+5. References
+{:toc}
 
-# Header 1
-## Header 2
-### Header 3
+## 2. Statistical Modelling
 
-- Bulleted
-- List
+For the purpose of the logistic regression model, the categorical variables were converted to factors.
 
-1. Numbered
-2. List
+```
+heart <- read.csv("Project Group 62_data.csv")
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+heart$sex <- as.factor(heart$sex)
+heart$cp <- as.factor(heart$cp)
+heart$fbs <- as.factor(heart$fbs)
+heart$restecg <- as.factor(heart$restecg)
+heart$exang <- as.factor(heart$exang)
+heart$slope <- as.factor(heart$slope)
+heart$ca <- as.factor(heart$ca)
+heart$thal <- as.factor(heart$thal)
+heart$target <- as.factor(heart$target)
 ```
 
-```
-check
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/DanielCEvans/Logistic_Regression_of_Heart_Disease_Data/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## 2.1 
