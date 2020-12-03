@@ -12,13 +12,13 @@ As the target feature ‘diagnosis of heart disease’ is binary, a logistic reg
 ## Table of Contents
 1. Executive Summary
 2. Statistical Modelling
-2.1 Model Fitting
-2.2 Residual Analysis
-2.3 Response Analysis
-2.4 Goodness of Fit
-2.5 Confidence Intervals
-2.6 Hypothesis Tests for Regression Parameters
-2.7 Sensitivity Analysis
+  2.1 Model Fitting
+  2.2 Residual Analysis
+  2.3 Response Analysis
+  2.4 Goodness of Fit
+  2.5 Confidence Intervals
+  2.6 Hypothesis Tests for Regression Parameters
+  2.7 Sensitivity Analysis
 3. Critique and Limitations
 4. Summary and Conclusions
 5. References
