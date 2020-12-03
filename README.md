@@ -10,21 +10,21 @@ As the target feature ‘diagnosis of heart disease’ is binary, a logistic reg
 
 
 ## Table of Contents
-1. Executive Summary
-2. Statistical Modelling
-2.1 Model Fitting
-2.2 Residual Analysis
-2.3 Response Analysis
-2.4 Goodness of Fit
-2.5 Confidence Intervals
-2.6 Hypothesis Tests for Regression Parameters
-2.7 Sensitivity Analysis
-3. Critique and Limitations
-4. Summary and Conclusions
-5. References
+Executive Summary
+Statistical Modelling
+Model Fitting
+Residual Analysis
+Response Analysis
+Goodness of Fit
+Confidence Intervals
+Hypothesis Tests for Regression Parameters
+Sensitivity Analysis
+Critique and Limitations
+Summary and Conclusions
+References
 {:toc}
 
-## 2. Statistical Modelling
+## Statistical Modelling
 
 For the purpose of the logistic regression model, the categorical variables were converted to factors.
 
@@ -42,7 +42,7 @@ heart$thal <- as.factor(heart$thal)
 heart$target <- as.factor(heart$target)
 ```
 
-## 2.1 
+### Model Fitting
 
 Firstly, a saturated logistic model was fitted using all of the independent variables to determine which ones were relevant for predicting heart disease.
 
@@ -223,7 +223,7 @@ The summary() function found that certain levels of categorical variable were st
 #### Final Model
 Logit(Probability of Heart Disease) = 2.33 – 1.67 x Sex 1 + 1.55 x Chest Pain 1 + 2.41 x Chest Pain 2 + 2.39 x Chest Pain 3 – 0.03 x Blood Pressure – 0.47 x Slope Exercise 1 + 1.86 x Slope Exercise 2 – 2.78 x Blood Vessels 1 – 3.21 x Blood Vessels 2 – 2.33 x Blood Vessels 3 + 1.54 x Blood Vessels 4 + 2.44 x Heart Defect 1 + 2.41 x Heart Defect 2 + 0.81 x Heart Defect 3
 
-## 2.2 Residual Analysis
+### Residual Analysis
 
 ```
 reducedModel.stdres = rstandard(reducedModel)
@@ -249,7 +249,7 @@ The histogram of standardised residuals is normally distributed with most of the
 
 The assumption of homoscedasticity of residuals for blood pressure appears to be true as the variance appears to be constant. Most of the errors fall close to zero however there are a few which fall greater than 3 standard deviations.
 
-## 2.3 Response Analysis
+### Response Analysis
 
 ```
 heart <- read.csv("Project Group 62_data.csv")
@@ -275,7 +275,7 @@ curve(expr = predict(object = trestbps.fit, newdata =
 
 I was interested in analysing the effect of blood pressure on the probability of being diagnosed with heart disease. One would expect that the higher the blood pressure, the greater chance of being diagnosed with heart disease. To examine the effects of Blood Pressure alone, a model was fit with that independent variable only. The above response analysis indicates the original hypothesis to be true. One must remember that in this dataset, a target value of 0 indicates diagnosis of heart disease so as this plot shows, as the blood pressure increases, values tend toward 0. A logistic regression cure was fitted however it appears more as a straight line as there are instances where patients with low blood pressure are diagnosed with heart disease and vice versa.
 
-## 2.4 Goodness of Fit
+### Goodness of Fit
 
 ```
 reducedModel.rdev <- reducedModel$deviance
@@ -302,7 +302,7 @@ good.fit.data
 
 Both the full and reduced models appear to be relatively good fits for the data with goodness of fit values greater than 0.6. The reduced model performs slightly better than the saturated model (0.68 > 0.64)
 
-## 2.5 Confidence Intervals
+### Confidence Intervals
 
 ```
 # Predicting likelihood of not having heart dieases with a blood pressure of 70
@@ -342,7 +342,7 @@ data.frame(predict.data, pi.hat, lower = CI.pi[1],
 
 I decided to predict the likelihood of not being diagnosed with heart disease with a blood pressure of 70. The logistic regression model found that with a blood pressure of 70, the probability of not being diagnosed with heart disease was 0.77. The 95% Wald confidence interval for this prediction was 0.59 < pi < 0.88. Thus, the probability of not being diagnosed with heart disease with a blood pressure as low as 70 is quite high.
 
-## 2.6 Hypothesis Tests for Regression Parameters
+### Hypothesis Tests for Regression Parameters
 
 ```
 summary(reducedModel)
@@ -408,7 +408,7 @@ Anova(reducedModel)
 
 The hypothesis test indicates that there is sufficient evidence to suggest that sex, type of chest pain (cp), resting blood pressure (trestbps), slope of the peak during exercise (slope), number of major vessels coloured by fluoroscopy (ca), and whether or not someone had a heart defect (thal) all have an effect on the diagnosis of heart disease as their respective p values are all below the alpha significance level of 0.05. The remaining variables in the data were deemed to be insignificant from the hypothesis test.
 
-## 2.7 Sensitivity Analysis
+### Sensitivity Analysis
 
 ```
 # Every 1mm/HG increase in resting blood pressure
@@ -447,15 +447,15 @@ For every one unit increase in resting blood pressure, the odds of being diagnos
 For every ten unit increase in resting blood pressure, the odds of being diagnosed with heart disease increases by 1.18
 Having 4 blood vessels coloured by fluoroscopy compared with 3 increases the odds of being diagnosed with heart diseases by 48 times.
 
-## 3. Critique and Limitations
+## Critique and Limitations
 This analysis assumed linearity between the dependent variable and the independent variables. It also assumed that there was no multicollinearity between the independent variables. Further analysis should conduct a covariance matrix between the independent variables to check for multicollinearity. A limitation of this study is the amount of data. With only 303 instances, we cannot be sure of the results determined. A greater number of instances might provide further evidence to what we have concluded in this analysis. A strength of this study is the reliability of the data. The data was collected at a medical centre with reliable instruments providing reliability and confidence in the data that was collect.
 
-## 4. Summary and Conclusions
+## Summary and Conclusions
 This analysis showed that there is a relationship between sex, type of chest pain (cp), resting blood pressure (trestbps), slope of the peak during exercise (slope), number of major vessels coloured by fluoroscopy (ca), and whether or not someone had a heart defect (thal) on the diagnosis of heart disease. Phase one of the project prepared the data for analysis and found that gender, age, and maximum heart rate during exercise could be good predictors for Heart Disease in the logistic regression model.
 
 In relation to the original goal, we were able to determine the probability of a patient being diagnosed or not diagnosed with heart disease based on certain attribute information. We were also able to analyse the effects of varying levels of significant predictor variables and how these effect the odds of being diagnosed with heart disease. This is what the analysis was originally set out to achieve. By understanding what contributes to heart disease and how changes to personal health increase the odds of being diagnosed with heart disease, we can better educate and treat people against Australia’s leading cause of death.
 
-## 5. References
+## References
 
 - [1] "Cardiovascular Disease", Australian Institute of Health and Welfare, viewed 17th Sep 2020, https://www.aihw.gov.au/reports/heart-stroke-vascular-diseases/cardiovascular-health-compendium/contents/how-many-australians-have-cardiovascular-disease
 
