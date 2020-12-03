@@ -443,9 +443,9 @@ exp(reducedModel$coefficients[12] - reducedModel$coefficients[11])
 
 The above results can be interpreted as follows:
 
-For every one unit increase in resting blood pressure, the odds of being diagnosed with heart disease increases by 0.93.
-For every ten unit increase in resting blood pressure, the odds of being diagnosed with heart disease increases by 1.18
-Having 4 blood vessels coloured by fluoroscopy compared with 3 increases the odds of being diagnosed with heart diseases by 48 times.
+- For every one unit increase in resting blood pressure, the odds of being diagnosed with heart disease increases by 0.93.
+- For every ten unit increase in resting blood pressure, the odds of being diagnosed with heart disease increases by 1.18
+- Having 4 blood vessels coloured by fluoroscopy compared with 3 increases the odds of being diagnosed with heart diseases by 48 times.
 
 ## Critique and Limitations
 This analysis assumed linearity between the dependent variable and the independent variables. It also assumed that there was no multicollinearity between the independent variables. Further analysis should conduct a covariance matrix between the independent variables to check for multicollinearity. A limitation of this study is the amount of data. With only 303 instances, we cannot be sure of the results determined. A greater number of instances might provide further evidence to what we have concluded in this analysis. A strength of this study is the reliability of the data. The data was collected at a medical centre with reliable instruments providing reliability and confidence in the data that was collect.
