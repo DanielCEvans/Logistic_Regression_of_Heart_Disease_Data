@@ -50,7 +50,21 @@ IMAGE OF DATA
 - Sex: 0 = female, 1 = male
 - Heart Disease: 0 = has heart disease, 1 = does not have heart disease
 
-IMAGES1-15
+<img width="396" alt="1" src="https://user-images.githubusercontent.com/65587875/101561489-8da61f80-3a19-11eb-918c-dd3b487d6afd.png">
+<img width="362" alt="2" src="https://user-images.githubusercontent.com/65587875/101561491-8e3eb600-3a19-11eb-8aee-9dc904986c8f.png">
+<img width="383" alt="3" src="https://user-images.githubusercontent.com/65587875/101561493-8ed74c80-3a19-11eb-80fe-c25b581e227f.png">
+<img width="362" alt="4" src="https://user-images.githubusercontent.com/65587875/101561494-8f6fe300-3a19-11eb-923f-5eb6df164763.png">
+<img width="389" alt="5" src="https://user-images.githubusercontent.com/65587875/101561498-8f6fe300-3a19-11eb-9f12-6d2b58ecb685.png">
+<img width="404" alt="6" src="https://user-images.githubusercontent.com/65587875/101561500-90087980-3a19-11eb-8922-778f97fcf105.png">
+<img width="417" alt="7" src="https://user-images.githubusercontent.com/65587875/101561501-90087980-3a19-11eb-84af-524eaece7ace.png">
+<img width="434" alt="8" src="https://user-images.githubusercontent.com/65587875/101561502-90a11000-3a19-11eb-993b-6913303c38ea.png">
+<img width="472" alt="9" src="https://user-images.githubusercontent.com/65587875/101561505-9139a680-3a19-11eb-997c-b14c99f8080a.png">
+<img width="629" alt="10" src="https://user-images.githubusercontent.com/65587875/101561508-926ad380-3a19-11eb-9d65-d0ef71a49637.png">
+<img width="626" alt="11" src="https://user-images.githubusercontent.com/65587875/101561511-93036a00-3a19-11eb-965c-93da1ea951d2.png">
+<img width="680" alt="12" src="https://user-images.githubusercontent.com/65587875/101561512-939c0080-3a19-11eb-80b2-ed849549d7c5.png">
+<img width="758" alt="13" src="https://user-images.githubusercontent.com/65587875/101561515-94349700-3a19-11eb-995b-4e6913911e53.png">
+<img width="770" alt="14" src="https://user-images.githubusercontent.com/65587875/101561518-94349700-3a19-11eb-97d3-ea46039a3f21.png">
+<img width="702" alt="15" src="https://user-images.githubusercontent.com/65587875/101561520-94cd2d80-3a19-11eb-8a17-265312df4b43.png">
 
 ## Analysis
 
@@ -282,7 +296,7 @@ hist(reducedModel.stdres, freq = FALSE,
 curve(dnorm(x), add=TRUE, col = "blue")
 ```
 
-<img width="653" alt="1" src="https://user-images.githubusercontent.com/65587875/100960816-2863b180-3575-11eb-8742-f97ba74f4551.png">
+<img width="653" alt="onee" src="https://user-images.githubusercontent.com/65587875/101561476-85e67b00-3a19-11eb-847b-6f16e98ae42e.png">
 
 ```
 plot(bloodPressure, reducedModel.stdres,
@@ -291,7 +305,7 @@ plot(bloodPressure, reducedModel.stdres,
 abline(h = c(0,0), col = "red")
 ```
 
-<img width="658" alt="2" src="https://user-images.githubusercontent.com/65587875/100960813-27cb1b00-3575-11eb-8dd6-d9555734b3a0.png">
+<img width="676" alt="twoo" src="https://user-images.githubusercontent.com/65587875/101561482-87b03e80-3a19-11eb-96ec-811fc6fe0123.png">
 
 The histogram of standardised residuals is normally distributed with most of the values falling close to 0 which indicates the model is working well. There are a few values which have errors greater than 3 standard deviations which is something to note.
 
@@ -319,7 +333,7 @@ curve(expr = predict(object = trestbps.fit, newdata =
         "red", add = TRUE)
 ```
 
-<img width="654" alt="3" src="https://user-images.githubusercontent.com/65587875/100960808-24d02a80-3575-11eb-87c9-32e2f35acc1f.png">
+<img width="654" alt="threee" src="https://user-images.githubusercontent.com/65587875/101561485-8a129880-3a19-11eb-9901-47310be2a2ae.png">
 
 I was interested in analysing the effect of blood pressure on the probability of being diagnosed with heart disease. One would expect that the higher the blood pressure, the greater chance of being diagnosed with heart disease. To examine the effects of Blood Pressure alone, a model was fit with that independent variable only. The above response analysis indicates the original hypothesis to be true. One must remember that in this dataset, a target value of 0 indicates diagnosis of heart disease so as this plot shows, as the blood pressure increases, values tend toward 0. A logistic regression cure was fitted however it appears more as a straight line as there are instances where patients with low blood pressure are diagnosed with heart disease and vice versa.
 
