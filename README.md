@@ -11,17 +11,80 @@ As the target feature ‘diagnosis of heart disease’ is binary, a logistic reg
 
 ## Table of Contents
 1. Executive Summary
-2. Statistical Modelling
-  2.1 Model Fitting
-  2.2 Residual Analysis
-  2.3 Response Analysis
-  2.4 Goodness of Fit
-  2.5 Confidence Intervals
-  2.6 Hypothesis Tests for Regression Parameters
-  2.7 Sensitivity Analysis
-3. Critique and Limitations
-4. Summary and Conclusions
-5. References
+2. Data Source and Description
+3. Data Exploration
+4. Analysis
+5. Statistical Modelling
+5.1 Model Fitting
+5.2 Residual Analysis
+5.3 Response Analysis
+5.4 Goodness of Fit
+5.5 Confidence Intervals
+5.6 Hypothesis Tests for Regression Parameters
+5.7 Sensitivity Analysis
+6. Critique and Limitations
+7. Summary and Conclusions
+8. References
+{:toc}
+
+## Data Source and Description
+
+The data can be accessed [here](https://archive.ics.uci.edu/ml/datasets/Heart+Disease)
+
+- The dataset contains information relating to Heart Disease on 303 individuals.
+- The data was collected at V.A. Medical Center, Long Beach and Cleveland Clinic Foundation where the names and social security numbers of the patients were removed and replaced with dummy numbers for privacy concerns.
+- The dataset contains a total of 14 attributes -- this is including the target feature.
+
+<img width="995" alt="data" src="https://user-images.githubusercontent.com/65587875/101562988-8c2a2680-3a1c-11eb-9008-bfa67ef27a1e.png">
+
+**Target Feature**
+-The target feature of the dataset is the diagnosis of heart disease.
+- The target feature is binary
+- 0 corresponds to a patient having heart disease. This is due to a diameter narrowing of over 50%
+- 1 corresponds to a patient not having heart disease. This is when the diameter narrowing is less than 50%
+- ‘Diameter narrowing’ refers to the diameter size of the coronary arteries which supply blood to the heart. By narrowing these vessels over the threshold of 50%, this restricts blood flow to the heart which is the cause of heart disease.
+
+## Data Exploration
+
+**Please note the following:**
+- Sex: 0 = female, 1 = male
+- Heart Disease: 0 = has heart disease, 1 = does not have heart disease
+
+<img width="396" alt="1" src="https://user-images.githubusercontent.com/65587875/101561489-8da61f80-3a19-11eb-918c-dd3b487d6afd.png">
+<img width="362" alt="2" src="https://user-images.githubusercontent.com/65587875/101561491-8e3eb600-3a19-11eb-8aee-9dc904986c8f.png">
+<img width="383" alt="3" src="https://user-images.githubusercontent.com/65587875/101561493-8ed74c80-3a19-11eb-80fe-c25b581e227f.png">
+<img width="362" alt="4" src="https://user-images.githubusercontent.com/65587875/101561494-8f6fe300-3a19-11eb-923f-5eb6df164763.png">
+<img width="389" alt="5" src="https://user-images.githubusercontent.com/65587875/101561498-8f6fe300-3a19-11eb-9f12-6d2b58ecb685.png">
+<img width="404" alt="6" src="https://user-images.githubusercontent.com/65587875/101561500-90087980-3a19-11eb-8922-778f97fcf105.png">
+<img width="417" alt="7" src="https://user-images.githubusercontent.com/65587875/101561501-90087980-3a19-11eb-84af-524eaece7ace.png">
+<img width="434" alt="8" src="https://user-images.githubusercontent.com/65587875/101561502-90a11000-3a19-11eb-993b-6913303c38ea.png">
+<img width="472" alt="9" src="https://user-images.githubusercontent.com/65587875/101561505-9139a680-3a19-11eb-997c-b14c99f8080a.png">
+<img width="629" alt="10" src="https://user-images.githubusercontent.com/65587875/101561508-926ad380-3a19-11eb-9d65-d0ef71a49637.png">
+<img width="626" alt="11" src="https://user-images.githubusercontent.com/65587875/101561511-93036a00-3a19-11eb-965c-93da1ea951d2.png">
+<img width="680" alt="12" src="https://user-images.githubusercontent.com/65587875/101561512-939c0080-3a19-11eb-80b2-ed849549d7c5.png">
+<img width="758" alt="13" src="https://user-images.githubusercontent.com/65587875/101561515-94349700-3a19-11eb-995b-4e6913911e53.png">
+<img width="770" alt="14" src="https://user-images.githubusercontent.com/65587875/101561518-94349700-3a19-11eb-97d3-ea46039a3f21.png">
+<img width="702" alt="15" src="https://user-images.githubusercontent.com/65587875/101561520-94cd2d80-3a19-11eb-8a17-265312df4b43.png">
+
+## Analysis
+
+The following information can be gleaned from the visualisations:
+
+- Figure 1 shows that there is approximately double the amount of males to females in the data
+- Figure 2 shows the median age is around 55
+- Figure 3 shows that age is approximately normally distributed
+- Figure 4 shows the median level of cholesterol is around 240. There also appears to be a few individuals with very high levels of cholesterol. We would expect that these instances would likely be diagnosed with Heart Disease.
+- Figure 5 shows that cholesterol is approximately normally distributed with the exception of the few instances with very high levels
+- Figure 6 shows that the counts for Heart Disease diagnosis is roughly equal
+- Figure 7 shows that those diagnosed with Heart Disease tend to be older than those not diagnosed with heart disease.
+- Figure 8 shows that those diagnosed with Heart Disease are more likely to be male than female.
+- Figure 9 shows somewhat surprisingly that levels of cholesterol does not differ much between those diagnosed with Heart Disease and those who are not.
+- Figure 10 shows that those diagnosed with Heart Disease tend for have a lower maximum heart rate achieved during exercise.
+- Figure 11 shoes that those diagnosed with Heart Disease, males tend to be slightly younger than females.
+- Figure 14 shows that maximum heart rate during exercise could be a good predictor for Heart Disease as those with lower levels tend to be diagnosed with the disease. It also shows that surprisingly levels of cholesterol may not be a good indicator for heart disease.
+
+The data exploration shows that gender, age, and maximum heart rate during exercise could be good predictors for Heart Disease in the logistic regression model.
+
 
 ## Statistical Modelling
 
@@ -233,9 +296,7 @@ hist(reducedModel.stdres, freq = FALSE,
 curve(dnorm(x), add=TRUE, col = "blue")
 ```
 
-<p align="center">
-  <img src="Images/onee.png" width = 600>
-</p>
+<img width="653" alt="onee" src="https://user-images.githubusercontent.com/65587875/101561476-85e67b00-3a19-11eb-847b-6f16e98ae42e.png">
 
 ```
 plot(bloodPressure, reducedModel.stdres,
@@ -244,9 +305,7 @@ plot(bloodPressure, reducedModel.stdres,
 abline(h = c(0,0), col = "red")
 ```
 
-<p align="center">
-  <img src="Images/twoo.png" width = 600>
-</p>
+<img width="676" alt="twoo" src="https://user-images.githubusercontent.com/65587875/101561482-87b03e80-3a19-11eb-96ec-811fc6fe0123.png">
 
 The histogram of standardised residuals is normally distributed with most of the values falling close to 0 which indicates the model is working well. There are a few values which have errors greater than 3 standard deviations which is something to note.
 
@@ -274,9 +333,7 @@ curve(expr = predict(object = trestbps.fit, newdata =
         "red", add = TRUE)
 ```
 
-<p align="center">
-  <img src="Images/threee.png" width = 600>
-</p>
+<img width="654" alt="threee" src="https://user-images.githubusercontent.com/65587875/101561485-8a129880-3a19-11eb-9901-47310be2a2ae.png">
 
 I was interested in analysing the effect of blood pressure on the probability of being diagnosed with heart disease. One would expect that the higher the blood pressure, the greater chance of being diagnosed with heart disease. To examine the effects of Blood Pressure alone, a model was fit with that independent variable only. The above response analysis indicates the original hypothesis to be true. One must remember that in this dataset, a target value of 0 indicates diagnosis of heart disease so as this plot shows, as the blood pressure increases, values tend toward 0. A logistic regression cure was fitted however it appears more as a straight line as there are instances where patients with low blood pressure are diagnosed with heart disease and vice versa.
 
