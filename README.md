@@ -11,18 +11,66 @@ As the target feature ‘diagnosis of heart disease’ is binary, a logistic reg
 
 ## Table of Contents
 1. Executive Summary
-2. Statistical Modelling
-2.1 Model Fitting
-2.2 Residual Analysis
-2.3 Response Analysis
-2.4 Goodness of Fit
-2.5 Confidence Intervals
-2.6 Hypothesis Tests for Regression Parameters
-2.7 Sensitivity Analysis
-3. Critique and Limitations
-4. Summary and Conclusions
-5. References
+2. Data Source and Description
+3. Data Exploration
+4. Analysis
+5. Statistical Modelling
+5.1 Model Fitting
+5.2 Residual Analysis
+5.3 Response Analysis
+5.4 Goodness of Fit
+5.5 Confidence Intervals
+5.6 Hypothesis Tests for Regression Parameters
+5.7 Sensitivity Analysis
+6. Critique and Limitations
+7. Summary and Conclusions
+8. References
 {:toc}
+
+## Data Source and Description
+
+The data can be accessed [here](https://archive.ics.uci.edu/ml/datasets/Heart+Disease)
+
+- The dataset contains information relating to Heart Disease on 303 individuals.
+- The data was collected at V.A. Medical Center, Long Beach and Cleveland Clinic Foundation where the names and social security numbers of the patients were removed and replaced with dummy numbers for privacy concerns.
+- The dataset contains a total of 14 attributes -- this is including the target feature.
+
+IMAGE OF DATA
+
+**Target Feature**
+-The target feature of the dataset is the diagnosis of heart disease.
+- The target feature is binary
+- 0 corresponds to a patient having heart disease. This is due to a diameter narrowing of over 50%
+- 1 corresponds to a patient not having heart disease. This is when the diameter narrowing is less than 50%
+- ‘Diameter narrowing’ refers to the diameter size of the coronary arteries which supply blood to the heart. By narrowing these vessels over the threshold of 50%, this restricts blood flow to the heart which is the cause of heart disease.
+
+## Data Exploration
+
+**Please note the following:**
+- Sex: 0 = female, 1 = male
+- Heart Disease: 0 = has heart disease, 1 = does not have heart disease
+
+IMAGES1-15
+
+## Analysis
+
+The following information can be gleaned from the visualisations:
+
+- Figure 1 shows that there is approximately double the amount of males to females in the data
+- Figure 2 shows the median age is around 55
+- Figure 3 shows that age is approximately normally distributed
+- Figure 4 shows the median level of cholesterol is around 240. There also appears to be a few individuals with very high levels of cholesterol. We would expect that these instances would likely be diagnosed with Heart Disease.
+- Figure 5 shows that cholesterol is approximately normally distributed with the exception of the few instances with very high levels
+- Figure 6 shows that the counts for Heart Disease diagnosis is roughly equal
+- Figure 7 shows that those diagnosed with Heart Disease tend to be older than those not diagnosed with heart disease.
+- Figure 8 shows that those diagnosed with Heart Disease are more likely to be male than female.
+- Figure 9 shows somewhat surprisingly that levels of cholesterol does not differ much between those diagnosed with Heart Disease and those who are not.
+- Figure 10 shows that those diagnosed with Heart Disease tend for have a lower maximum heart rate achieved during exercise.
+- Figure 11 shoes that those diagnosed with Heart Disease, males tend to be slightly younger than females.
+- Figure 14 shows that maximum heart rate during exercise could be a good predictor for Heart Disease as those with lower levels tend to be diagnosed with the disease. It also shows that surprisingly levels of cholesterol may not be a good indicator for heart disease.
+
+The data exploration shows that gender, age, and maximum heart rate during exercise could be good predictors for Heart Disease in the logistic regression model.
+
 
 ## Statistical Modelling
 
