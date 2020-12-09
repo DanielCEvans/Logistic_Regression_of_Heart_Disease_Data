@@ -234,7 +234,7 @@ curve(dnorm(x), add=TRUE, col = "blue")
 ```
 
 <p align="center">
-  <img src="Images/1.png" width = 600>
+  <img src="Images/onee.png" width = 600>
 </p>
 
 ```
@@ -245,7 +245,7 @@ abline(h = c(0,0), col = "red")
 ```
 
 <p align="center">
-  <img src="Images/2.png" width = 600>
+  <img src="Images/twoo.png" width = 600>
 </p>
 
 The histogram of standardised residuals is normally distributed with most of the values falling close to 0 which indicates the model is working well. There are a few values which have errors greater than 3 standard deviations which is something to note.
@@ -275,7 +275,7 @@ curve(expr = predict(object = trestbps.fit, newdata =
 ```
 
 <p align="center">
-  <img src="Images/3.png" width = 600>
+  <img src="Images/three.png" width = 600>
 </p>
 
 I was interested in analysing the effect of blood pressure on the probability of being diagnosed with heart disease. One would expect that the higher the blood pressure, the greater chance of being diagnosed with heart disease. To examine the effects of Blood Pressure alone, a model was fit with that independent variable only. The above response analysis indicates the original hypothesis to be true. One must remember that in this dataset, a target value of 0 indicates diagnosis of heart disease so as this plot shows, as the blood pressure increases, values tend toward 0. A logistic regression cure was fitted however it appears more as a straight line as there are instances where patients with low blood pressure are diagnosed with heart disease and vice versa.
