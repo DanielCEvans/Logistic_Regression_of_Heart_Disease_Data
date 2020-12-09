@@ -35,7 +35,7 @@ The data can be accessed [here](https://archive.ics.uci.edu/ml/datasets/Heart+Di
 - The data was collected at V.A. Medical Center, Long Beach and Cleveland Clinic Foundation where the names and social security numbers of the patients were removed and replaced with dummy numbers for privacy concerns.
 - The dataset contains a total of 14 attributes -- this is including the target feature.
 
-IMAGE OF DATA
+<img width="995" alt="data" src="https://user-images.githubusercontent.com/65587875/101562988-8c2a2680-3a1c-11eb-9008-bfa67ef27a1e.png">
 
 **Target Feature**
 -The target feature of the dataset is the diagnosis of heart disease.
